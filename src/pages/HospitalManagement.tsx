@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getHospitals } from "../service/HospitalService"
 import { Link } from "react-router-dom"
 import { deleteHospital } from "../service/HospitalService"
-import { addFavourite } from "../service/FavouriteService"
+
 
 
 export default function HospitalManagement() {

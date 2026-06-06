@@ -8,8 +8,13 @@ type CreateHospitalData = {
   phone: string
   email: string
   ownership_type: string
-  specialities: string
+  specialities: string[]
   description_markdown: string
+  latitude: number
+  longitude: number
+  facility_image?: string
+  rating_average?: number
+  created_by?: string
 }
 
 

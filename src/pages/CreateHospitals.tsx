@@ -20,7 +20,19 @@ const hospitalSchema = z.object({
 })
 
 export default function CreateHospital() {
-   const [formData, setFormData] = useState({
+   const [formData, setFormData] = useState<{
+    name: string,
+    address: string,
+    city: string,
+    lga: string,
+    phone: string,
+    email: string,
+    ownership_type: string,
+    specialities: string[],
+    description_markdown: string,
+    latitude: string,
+    longitude: string
+   }>({
     name: "",
     address: "",
     city: "",
@@ -28,7 +40,7 @@ export default function CreateHospital() {
     phone: "",
     email: "",
     ownership_type: "",
-    specialities: [] as string[],
+    specialities: [],
     description_markdown: "",
     latitude: "",
     longitude: ""
@@ -36,6 +48,8 @@ export default function CreateHospital() {
 
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [imageFile, setImageFile] = useState<File | null>(null)
+
+
   
   async function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     console.log("FORM SUBMITTED")
@@ -258,7 +272,9 @@ className="space-y-4">
   onChange={(e) =>
     setFormData({
       ...formData,
-      specialities: e.target.value.split(",").map((s) => s.trim()),
+      specialities: e.target.value.
+      split(",")
+      .map((s) => s.trim()),
     })
   }
 />

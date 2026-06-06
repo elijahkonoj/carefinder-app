@@ -74,12 +74,11 @@ useEffect(() => {
     async (_event, session) => {
       setUser(session?.user ?? null)
 
-      if (!session?.user) {
+     
 
-
-        console.log("AUTH LISTENER USER:", session.user.id)
-    setRole("")
-  }
+  if (session) {
+  console.log("AUTH LISTENER USER:", session?.user?.id)
+}
 
     }
   )
